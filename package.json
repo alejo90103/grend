@@ -1,0 +1,19 @@
+{
+  "name": "grand",
+  "version": "1.0.0",
+  "description": "GRAND Stack Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grand",
+    "neo4j",
+    "apollo",
+    "nodejs",
+    "reactjs",
+    "graphql"
+  ],
+  "author": "Alejandro Herrera",
+  "license": "MIT"
+}
