@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##GraphQL Query
 query{
   allModels {
@@ -53,3 +54,7 @@ query{
     ]
   }
 }
+=======
+# grend
+Project using graphql, neo4j, express and react
+>>>>>>> 0ac9f04124cc7a0ec86861d725b892db4cf8a399
