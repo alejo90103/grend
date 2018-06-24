@@ -17,11 +17,11 @@ export default {
   Query: {
     allBrands() {
       const session = driver.session();
-      const query = 'MATCH (brand:Brand) RETURN brand;';
+      const query = 'MATCH (brand:Brand) RETURN brand{ .name, models: [(brand)<-[MODEL_OF]-(brand_models:Model) | brand_models { .name }]}; ';
       return session.run(query)
         .then( result => {
           return result.records.map(record => {
-            return record.get('brand').properties;
+            return record.get('brand');
           });
         });
     },
@@ -36,22 +36,4 @@ export default {
         });
     }
   }
-  // Models: {
-  //   models(id) {
-  //     console.log(id);
-  //     const session = driver.session();
-  //     const params = { brandId: id };
-  //     const query = `MATCH (brand:Brand) WHERE brand.id = $brandId'
-  //                    MATCH brand-[:MODEL_OF]->(models:Model)
-  //                    RETURN models;
-  //                   `;
-  //     return session.run(query)
-  //       .then( result => {
-  //         return result.records.map(record => {
-  //           console.log(record.get('model'));
-  //           return record.get('model').properties;
-  //         });
-  //       });
-  //   }
-  // }
 };
